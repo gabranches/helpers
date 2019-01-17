@@ -1,0 +1,25 @@
+{
+  "name": "@gabranches/helpers",
+  "version": "1.0.2",
+  "description": "Some helper functions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabranches/helpers.git"
+  },
+  "author": "Gustavo Abranches",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabranches/helpers/issues"
+  },
+  "homepage": "https://github.com/gabranches/helpers#readme",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "redis": "^2.8.0"
+  }
+}
