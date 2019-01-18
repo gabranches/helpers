@@ -11,7 +11,7 @@ self.addCommas = x => {
   return whole + '.' + decimal
 },
 
-self.readable = (val, precision = 3) => {
+self.formatDefault = (val, precision = 3) => {
   let num = parseFloat(val)
   let wholeNum = Math.round(val)
   if (num === 0) {
@@ -32,6 +32,10 @@ self.readable = (val, precision = 3) => {
   if (val < 1000000000000000) {
     return (wholeNum / 1000000000000).toPrecision(precision) + 'T'
   }
+}
+
+self.formatPercent = (val, decimals = 2) => {
+  return parseFloat(val).toFixed(decimals) + '%'
 }
 
 module.exports = self
