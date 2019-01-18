@@ -18,8 +18,8 @@ module.exports = class Cache {
     console.log('Saved ' + key)
   }
   saveTemp(key, value, time) {
-    this._client.set(key, value, 'EX', time)
-    console.log('Saved temp ' + time + ' ' + key)
+    this._client.set(key + '_TEMP', value, 'EX', time)
+    console.log('Saved TEMP ' + time + ' ' + key)
   }
   delete(key) {
     console.log('Deleted ' + key)
@@ -33,6 +33,19 @@ module.exports = class Cache {
           console.log(key + ' is empty.')
         } else {
           console.log('Loaded ' + key)
+        }
+        resolve(body)
+      })
+    })
+  }
+  loadTemp(key) {
+    return new Promise((resolve, reject) => {
+      this._client.get(key + '_TEMP', (err, body) => {
+        if (err) reject(err)
+        if (!body) {
+          console.log(key + ' TEMP is empty.')
+        } else {
+          console.log('Loaded TEMP ' + key)
         }
         resolve(body)
       })
