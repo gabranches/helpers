@@ -12,8 +12,12 @@ self.addCommas = x => {
 },
 
 self.formatDefault = (val, precision = 3) => {
-  let num = parseFloat(val)
+  let num = Number.parseFloat(val)
   let wholeNum = Math.round(val)
+
+  if (num < .0001) {
+    return num.toExponential(1)
+  }
   if (num === 0) {
     return 0
   }
