@@ -15,11 +15,11 @@ self.formatDefault = (val, precision = 3) => {
   let num = Number.parseFloat(val)
   let wholeNum = Math.round(val)
 
+  if (num === 0) {
+    return '-'
+  }
   if (num < .0001) {
     return num.toExponential(1)
-  }
-  if (num === 0) {
-    return 0
   }
   if (val < 1000) {
     return num.toPrecision(precision)
@@ -39,6 +39,9 @@ self.formatDefault = (val, precision = 3) => {
 }
 
 self.formatPercent = (val, decimals = 2) => {
+  if (val === 0) {
+    return '-'
+  }
   return parseFloat(val).toFixed(decimals) + '%'
 }
 

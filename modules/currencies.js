@@ -4,6 +4,7 @@ const self = {}
 self.formatDefault = (num, code = 'USD') => {
   const numReadable = numbers.formatDefault(num)
   const numSats = numbers.formatDefault(num / 100000000)
+  if (num === 0) { return '-'}
   if (code === 'USD') return '$' + numReadable
   if (code === 'EUR') return '€' + numReadable
   if (code === 'BTC') return '₿' + numReadable
