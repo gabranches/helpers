@@ -18,13 +18,16 @@ describe('numbers', () => {
   describe('format', () => {
     it('should follow the default guidelines', () => {
       expect(numbers.format(0)).toBe('0');
-      expect(numbers.format(0, {dashedZero: true})).toBe('-');
+      expect(numbers.format(0, { dashedZero: true })).toBe('-');
       expect(numbers.format(0.00123)).toBe('0.00123');
       expect(numbers.format(0.0123)).toBe('0.0123');
       expect(numbers.format(0.123)).toBe('0.123');
       expect(numbers.format(8.123)).toBe('8.12');
+      expect(numbers.format(8.123, { currency: true })).toBe('8.12');
       expect(numbers.format(98.123)).toBe('98.1');
+      expect(numbers.format(98.123, { currency: true })).toBe('98.12');
       expect(numbers.format(998.123)).toBe('998');
+      expect(numbers.format(998.123, { currency: true })).toBe('998');
       expect(numbers.format(9988.123)).toBe('9,988');
       expect(numbers.format(9987.923)).toBe('9,988');
       expect(numbers.format(12345.123412)).toBe('12,345');
