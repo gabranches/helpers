@@ -2,7 +2,7 @@ const numbers = require('./numbers')
 const self = {}
 
 self.format = (num, code = 'USD') => {
-  const numReadable = numbers.format(num)
+  const numReadable = numbers.format(num, {currency: true})
   const numSats = numbers.format(num / 100000000)
   if (num === 0) { return '-'}
   if (code === 'USD') return '$' + numReadable
