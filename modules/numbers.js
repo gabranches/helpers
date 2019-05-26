@@ -23,7 +23,7 @@ self.format = (val, options = {}) => {
   if (num < .0001) {
     return num.toExponential(1)
   }
-  if (val < 100) {
+  if (val > 0 && val < 100) {
     if (options.currency) return num.toFixed(2);
   }
   if (val < 1000) {
