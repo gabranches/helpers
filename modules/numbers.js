@@ -22,7 +22,7 @@ const self = {};
     if (num <= 0.0001) {
       return num.toExponential(1);
     }
-    if (val >= 0.1 && val < 100) {
+    if (val >= 1 && val < 100) {
       if (options.currency) return num.toFixed(2);
     }
     if (val < 1000) {
