@@ -1,10 +1,10 @@
 {
   "name": "@gabranches/helpers",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Some helper functions.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -17,9 +17,7 @@
   },
   "homepage": "https://github.com/gabranches/helpers#readme",
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "jest": "^24.8.0"
   },
-  "dependencies": {
-    "redis": "^2.8.0"
-  }
+  "dependencies": {}
 }
